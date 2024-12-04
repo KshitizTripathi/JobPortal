@@ -1,9 +1,9 @@
 package com.example.luv2code.jobportal.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.util.List;
 
 @Entity

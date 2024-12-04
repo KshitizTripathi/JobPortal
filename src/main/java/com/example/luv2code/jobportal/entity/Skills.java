@@ -1,8 +1,9 @@
 package com.example.luv2code.jobportal.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
+
 
 @Entity
 @Table(name = "skills")

@@ -1,10 +1,11 @@
 package com.example.luv2code.jobportal.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.lang.Nullable;
 
-import javax.persistence.*;
+
 
 @Entity
 @Table(name = "recruiter_profile")
