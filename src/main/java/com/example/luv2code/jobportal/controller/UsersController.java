@@ -4,6 +4,9 @@ import com.example.luv2code.jobportal.entity.Users;
 import com.example.luv2code.jobportal.entity.UsersType;
 import com.example.luv2code.jobportal.services.UsersService;
 import com.example.luv2code.jobportal.services.UsersTypeService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -13,9 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -36,7 +37,7 @@ public class UsersController {
         return "register";
     }
     @PostMapping("/register/new")
-    public String userRegistration(@Valid Users user,Model model){
+    public String userRegistration(@Valid Users user, Model model){
         System.out.println("User "+user);
         Optional<Users> userFound=usersService.findUserByEmail(user.getEmail());
         if(userFound.isPresent()){

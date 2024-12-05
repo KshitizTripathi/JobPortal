@@ -30,7 +30,7 @@ public class JobPostActivityController {
             System.out.println("Username "+currentUsername);
         }
         System.out.println("User "+currentUserProfile);
-        model.addAttribute("user"+currentUserProfile);
+        model.addAttribute("user",currentUserProfile);
         return "dashboard";
     }
 

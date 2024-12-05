@@ -38,8 +38,8 @@ public class WebSecurityConfig {
     @Bean
     protected SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authenticationProvider(authenticationProvider());
-        http.authorizeRequests(auth -> {
-            auth.antMatchers(publicUrl).permitAll();
+        http.authorizeHttpRequests(auth -> {
+            auth.requestMatchers(publicUrl).permitAll();
             auth.anyRequest().authenticated();
         });
         http.formLogin(form-> form.loginPage("/login").permitAll()
